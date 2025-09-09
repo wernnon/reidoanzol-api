@@ -2,10 +2,18 @@
 
 import pkg from 'pg';
 const { Pool } = pkg;
+import dotenv from 'dotenv';
+import 'dotenv/config';
+
+dotenv.config();
 
 // Pool usando connection string correta
 const pool = new Pool({
-  connectionString: 'postgresql://postgres.xrdlhodcecxsabdgbgcz:lnbaQJcQi14ju9as@aws-0-sa-east-1.pooler.supabase.com:5432/postgres'
+ host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
 });
 
 // Função para testar a conexão
