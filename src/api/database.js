@@ -9,11 +9,13 @@ dotenv.config();
 
 // Pool usando connection string correta
 const pool = new Pool({
- host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
+  host:'aws-1-sa-east-1.pooler.supabase.com',
+  user: 'postgres.rxcdicqnczmgajkgsnup',
+  port: '5432',
+  database: 'postgres',
+  user: 'postgres.rxcdicqnczmgajkgsnup',
+  pool_mode:'session',
+  password: 'xr1fENvWET2eUy6o'
 });
 
 // Função para testar a conexão
