@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const corsOptions = {
-  origin: ['https://reidoanzol.vercel.app', 'https://reidoanzolpvh.com'], // Permite apenas esses domínios
+  origin: ['https://reidoanzol.vercel.app', 'https://reidoanzolpvh.com', 'https://www.reidoanzolpvh.com'], // Permite apenas esses domínios
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
