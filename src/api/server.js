@@ -1,25 +1,31 @@
-// server.mjs (ou server.js com "type": "module" no package.json)
+// server.mjs (Corrigido para aceitar apenas o seu site)
 
 // Importa dependências
 import express from 'express';
 import cors from 'cors';
 import { pool, testConnection } from './database.js';
-import teamRoutes from './routes/team.js'; // Importa as rotas de equipe
-
+import teamRoutes from './routes/team.js';
 
 const app = express();
 
 // Porta do servidor
 const PORT = process.env.PORT || 3001;
 
+const corsOptions = {
+  origin: 'https://reidoanzol.vercel.app',
+  methods: ['GET', 'POST', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
 // Middlewares
-app.use(cors()); // Permite requisições de qualquer origem
-app.use(express.json()); // Permite receber JSON no body das requisições
+app.use(cors(corsOptions)); // Usa as opções de CORS que definimos acima
+app.use(express.json());   // Permite receber JSON no body das requisições
 
 // Testar conexão
 testConnection();
 
-app.use('/api', teamRoutes); // Usa as rotas de equipe com prefixo /api
+// Usa as rotas de equipe com prefixo /api
+app.use('/api', teamRoutes);
 
 // Exemplo de rota que consulta o banco
 app.get('/users', async (req, res) => {
@@ -32,7 +38,7 @@ app.get('/users', async (req, res) => {
   }
 });
 
-// Rotas
+// Rotas de teste
 app.get('/', (req, res) => {
   res.send('<h1>Servidor Node.js funcionando!</h1><p>Bem-vindo à API</p>');
 });
