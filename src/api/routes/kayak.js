@@ -7,7 +7,7 @@ const router = express.Router();
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 // Novo endpoint para registrar um único competidor
-router.post("/register-competitor-kayak", async (req, res) => {
+router.post("/register-competitor", async (req, res) => {
   const client = await pool.connect();
   
   try {

@@ -23,7 +23,8 @@ async function startServer() {
   const allowedOrigins = [
     'https://reidoanzol.vercel.app',
     'https://reidoanzolpvh.com',
-    'https://www.reidoanzolpvh.com'
+    'https://www.reidoanzolpvh.com',
+    'http://localhost:5173'
   ];
 
   const corsOptions = {
