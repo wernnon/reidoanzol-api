@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 import { pool, testConnection } from './database.js';
 import teamRoutes from './routes/team.js';
+import kayakRoutes from './routes/kayak.js';
 
 const app = express();
 
@@ -26,7 +27,7 @@ testConnection();
 
 // Usa as rotas de equipe com prefixo /api
 app.use('/api', teamRoutes);
-
+app.use('/api', kayakRoutes);
 // Exemplo de rota que consulta o banco
 app.get('/users', async (req, res) => {
   try {
