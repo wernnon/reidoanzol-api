@@ -13,7 +13,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const corsOptions = {
-  origin: 'https://reidoanzolpvh.com',
+  origin: [
+    'https://www.reidoanzolpvh.com', 
+    'https://reidoanzolpvh.com'  
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
