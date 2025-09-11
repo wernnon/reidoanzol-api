@@ -10,7 +10,7 @@ const pool = new Pool({
   user: 'postgres.rxcdicqnczmgajkgsnup',
   port: 5432,
   database: 'postgres',
-  password: 'S7dsxHF0beraSZPQ'
+  password: 'xr1fENvWET2eUy6o'
 });
 
 // Função para testar a conexão
